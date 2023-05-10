@@ -1,0 +1,45 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'index.html' %}
+{% block body %}
+<body>
+      <form id="form2" name="form2" method="post" action="Manage TL.html#about">
+        <table width="200" border="1"class="table table-hover">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">&nbsp;</th>
+          </tr>
+
+          {% for i in val %}
+          <tr>
+            <td>{{i['Fname']}} {{i['Lname']}}</td>
+            <td>{{i['age']}}</td>
+            <td>{{i['email']}}</td>
+            <td>{{i['phone']}}</td>
+            <td><p><a href="EDIT_TL1?id={{i['lid']}}"class="btn btn-info"> Edit</a></p>
+                <p><a href="delete_TL?id={{i['lid']}}"class="btn btn-danger">Delete</a></p></td>
+          </tr>
+          {% endfor %}
+          <tr>
+            <td colspan="5"><label>
+              <input type="submit" name="Submit2"class="btn btn-primary" value="Add" />
+              </label>
+            </td>
+          </tr>
+        </table>
+</form>
+      <form id="form1" name="form1" method="post" action="Manage TL.html">
+      </form>
+
+</body>
+
+<!--</html>-->
+{% endblock %}

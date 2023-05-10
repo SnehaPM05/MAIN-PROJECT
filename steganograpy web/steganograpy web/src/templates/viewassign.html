@@ -1,0 +1,58 @@
+
+{% extends 'TMindex.html' %}
+{% block body %}
+<head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript">
+
+  function showDiv( id) {
+
+   $('.hide'+id).toggle('show');
+}
+
+
+(function($) {
+
+})(jQuery);
+ </script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="245" border="1" class="table">
+    <tr>
+      <th scope="col">Work</th>
+       <th scope="col">Image</th>
+      <th scope="col">Description</th>
+      <th scope="col">Date</th>
+  <th scope="col">Message</th>
+      <th scope="col">Status</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <th scope="row">{{i['work']}} </th>
+      <td><img src="../static/work/{{i['image']}}" width="100" height="100"></td>
+      <td>{{i['work_type']}}</td>
+      <td>{{i['date']}}</td>
+      <td> <div class="hide{{i['aid']}}" style="display:none;">{{i['msg']}}</div>
+        <input type="button" id="hideshow"class="btn btn-primary" value="click" onclick="showDiv({{i['aid']}})"> </input>
+      </td>
+      </td>
+      {% if i['status']=='pending' %}
+      <td><a href="updatework?id={{i['aid']}}#about" class="btn btn-primary">Update</a></td>
+      {% else %}
+      <td><p>{{i['status']}}</p>
+        <p><a href="updatework?id={{i['aid']}}#about">Click here to Update</a> </p></td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+
+  </table>
+</form>
+</body>
+<!--</html>-->
+
+{% endblock %}

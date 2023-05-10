@@ -1,0 +1,42 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+{% extends 'index.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form2" name="form2" method="post" action="Add Work And assign TL-2.html#about">
+  <table width="200" border="1"class="table table-hover">
+    <tr>
+      <th scope="col">WorkType</th>
+      <th scope="col">Image</th>
+      <th scope="col">TeamLead</th>
+      <th scope="col">Date</th>
+      <th scope="col">Date_to_be_completed</th>
+      <th scope="col">Status</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>&nbsp;{{i['work_type']}}</td>
+      <td><img src="../static/work/{{i['image']}}" width="100" height="100"></td>
+      <td>{{i['Fname']}} {{i['Lname']}}</td>
+      <td>{{i['date']}}</td>
+      <td>{{i['date_to_be_completed']}}</td>
+      <td>&nbsp;{{i['status']}}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="6"><label>
+        <input type="submit" name="Submit2"class="btn btn-primary"  value="Add" />
+        </label>
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}
+

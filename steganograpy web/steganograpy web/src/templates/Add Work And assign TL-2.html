@@ -1,0 +1,64 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+{% extends 'index.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="Add_Work" method="post" enctype="multipart/form-data" name="form2" id="form2#about">
+  <table width="340" border="1"class="table table-hover">
+    <tr>
+      <th width="178" scope="row">WorkType</th>
+      <td width="146"><label>
+        <input type="text" name="textfield"required />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Image</th>
+      <td><label>
+        <input type="file" name="file" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">TeamLead</th>
+      <td><label>
+        <select name="select"required>
+          {% for i in val %}
+          <option value="{{i['lid']}}">{{i['Fname']}} {{i['Lname']}}</option>
+          {% endfor %}
+        </select>
+      </label></td>
+    </tr>
+    <!--<tr>-->
+      <!--<th scope="row">Date</th>-->
+      <!--<td><label>-->
+        <!--<input type="text" name="textfield4" />-->
+      <!--</label></td>-->
+    <!--</tr>-->
+    <tr>
+      <th scope="row">Date_to_be_completed</th>
+      <td><label>
+        <input type="date" name="textfield5"required />
+      </label>
+      <label></label></td>
+    </tr>
+    <!--<tr>-->
+      <!--<th scope="row">Status</th>-->
+      <!--<td><label>-->
+        <!--<input type="text" name="textfield6" />-->
+      <!--</label></td>-->
+    <!--</tr>-->
+    <tr>
+      <th colspan="2" scope="row"> <label>
+        <input type="submit" name="Submit2"class="btn btn-primary"  value="Add" />
+        </label>      </th>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}
+

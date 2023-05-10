@@ -1,0 +1,37 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'TMindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="updatestatus#about">
+  <table width="285" border="1" class="table table-hover">
+    <tr>
+      <th colspan="4" scope="col"><strong>date
+          <label>
+        <input type="date" name="textfield" required/>
+        <input type="submit" name="Submit" value="Search" />
+              </label>
+      </strong></th>
+    </tr>
+    <tr>
+      <td width="42">work</td>
+      <td width="76"><strong>TL name </strong></td>
+      <td width="45"><strong>status</strong></td>
+    </tr>
+    {% for i in val %}
+
+    <tr>
+      <td>&nbsp;{{i['work_type']}}</td>
+      <td>{{i['Fname']}} {{i['Lname']}}</td>
+      <td>{{i['status']}}&nbsp;</td></tr>
+    {% endfor %}
+
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}
