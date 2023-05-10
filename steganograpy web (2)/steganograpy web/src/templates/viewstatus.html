@@ -1,0 +1,43 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--</head>-->
+{% extends 'TLindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form2" name="form2" method="post" action="searchstatus#about">
+  <table width="311" border="1"class="table table-hover">
+    <tr>
+      <th colspan="3" scope="col"> <label>Team Member</label>
+       <select name="select">
+      {% for i in val1 %}
+      <option value="{{i['lid']}}">{{i['fname']}} {{i['lname']}}</option>
+      {% endfor %}
+    </select> </th>
+        </label>
+        <th>  <label>
+          <input type="submit" name="Submit" value="Search" />
+          </label>
+      </th>
+    </tr>
+    <tr>
+      <td ><strong>Work</strong></td>
+      <td><strong>Status</strong></td>
+      <td ><strong>Date</strong></td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i['work_type']}} </td>
+      <td>{{i['status']}} </td>
+      <td>{{i['date']}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

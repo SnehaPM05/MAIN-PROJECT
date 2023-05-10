@@ -1,0 +1,36 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'TLindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="Allocate.html#about">
+  <table width="429" border="1"class="table table-hover">
+    <tr>
+      <th width="43" scope="col">Work-Type</th>
+      <th width="42" scope="col">Image</th>
+      <th width="33" scope="col">Date</th>
+      <th width="154" scope="col">Date_to_be_completed</th>
+      <th width="42" scope="col">Status</th>
+      <th width="75" scope="col">&nbsp;</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i['work_type']}}</td>
+      <td>{{i['image']}}</td>
+      <td>{{i['teamlead']}}</td>
+      <td>{{i['date_to_be_completed']}}</td>
+      <td>{{i['status']}}</td>
+      <td><a href="Allocate.html?id={{i['wid']}}">Allocate</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}
+
